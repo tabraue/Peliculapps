@@ -11,18 +11,17 @@ interface Props {
 }
 
 const MoviePoster = ({movie, height = 420, width = 300}: Props) => {
+
   const imageUri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
-  const navigation = useNavigation();
-
-  
+  const navigation = useNavigation();  
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('DetailScreen', movie)}
+      onPress={ () => navigation.navigate('DetailScreen', movie) }
       activeOpacity={0.8}
-      style={[styles.elevation, styles.cardContainer, {width, height}]}>
-      <View style={styles.imgContainer}>
+      style={[ styles.cardContainer, {width, height}]}>
+      <View style={[styles.imgContainer, styles.elevation]}>
         <Image source={{uri: imageUri}} style={styles.img} />
       </View>
     </TouchableOpacity>

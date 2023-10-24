@@ -2,15 +2,15 @@ import React from 'react';
 import Carousel from 'react-native-snap-carousel';
 import {Movie} from '../interfaces/movieInterface';
 import {styles} from '../theme/theme';
-import {Dimensions, Text, View} from 'react-native';
+import { Text, View} from 'react-native';
 import MoviePoster from './MoviePoster';
+import { width } from '../constants/constants';
 
 interface Props {
   title?: string;
   movies: Movie[];
 }
 
-const {width, height} = Dimensions.get('window');
 
 const CarouselMain = ({title, movies}: Props) => {
   return (

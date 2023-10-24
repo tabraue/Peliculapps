@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {height} from '../constants/constants';
 
 export const styles = StyleSheet.create({
   activity: {
@@ -7,14 +8,17 @@ export const styles = StyleSheet.create({
     alignContent: 'center',
   },
   colors: {},
-  cardContainer: {
-    marginHorizontal:5,
-  },
   elevation: {
     elevation: 20,
     shadowColor: '#000',
-    //shadowOpacity: 1,
-    //shadowRadius:10,
+    shadowOffset: {width: 6, height: 6},
+    shadowOpacity: 0.6,
+    shadowRadius: 4,
+  },
+  cardContainer: {
+    marginHorizontal: 2,
+    paddingBottom: 20,
+    paddingHorizontal: 6,
   },
   imgContainer: {
     flex: 1,
@@ -27,6 +31,25 @@ export const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
-    margin: 10
+    margin: 10,
   },
+  titleMovieTxt:{
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  movieTxtContainer:{
+    marginHorizontal:20,
+    marginTop: 25,
+  },
+  imgDetailsContainer: {
+    width: '100%',
+    height: height * 0.7,
+    borderBottomEndRadius: 150,
+    borderBottomStartRadius: 0,
+    overflow: 'hidden',
+  },
+  imgDetails: {
+    flex: 1,
+  },
+
 });
