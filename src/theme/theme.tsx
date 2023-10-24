@@ -1,35 +1,30 @@
-import { StyleSheet } from "react-native";
-
-
+import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-    activity: {
-        flex: 1, 
-        justifyContent: 'center', 
-        alignContent: 'center'
-    },
-    colors: {
+  activity: {
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  colors: {},
 
-    },
-    cardContainer: {
-        width: 300,
-        height: 420,
-    },
-    imgContainer:{
-        flex: 1,
-        shadowColor: "#000000",
-shadowOffset: {
-  width: 0,
-  height: 14,
-},
-shadowOpacity:  0.24,
-shadowRadius: 15.38,
-elevation: 19
-    },
-    card: {
-        flex: 1,
-        borderRadius: 18,
-        
-    },
-
-})
+  elevation: {
+    elevation: 20,
+    shadowColor: '#000',
+    //shadowOpacity: 1,
+    //shadowRadius:10,
+  },
+  imgContainer: {
+    flex: 1,
+  },
+  img: {
+    flex: 1,
+    borderRadius: 18,
+  },
+  titles: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: 10
+  },
+});
