@@ -15,18 +15,20 @@ const {width, height} = Dimensions.get('window');
 const CarouselMain = ({title, movies}: Props) => {
   return (
     <View>
-      <Text style={styles.titles}>{title}</Text>
+      {title && <Text style={styles.titles}>{title}</Text>}
       <View style={{height: 440}}>
-        <Carousel
-          layout={'stack'}
-          layoutCardOffset={18}
-          data={movies}
-          renderItem={({item}: any) => (
-            <MoviePoster movie={item} key={item.id} />
-          )}
-          sliderWidth={width}
-          itemWidth={300}
-        />
+        {movies && (
+          <Carousel
+            layout={'stack'}
+            layoutCardOffset={18}
+            data={movies}
+            renderItem={({item}: any) => (
+              <MoviePoster movie={item} key={item.id} />
+            )}
+            sliderWidth={width}
+            itemWidth={300}
+          />
+        )}
       </View>
     </View>
   );

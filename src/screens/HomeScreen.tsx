@@ -7,7 +7,7 @@ import HorizontalSlider from '../components/HorizontalSlider';
 import CarouselMain from '../components/CarouselMain';
 
 const HomeScreen = () => {
-  const {moviesNowPlaying, popularMovies, isLoading} = useMovies();
+  const {nowPlaying, popular, topRated, upcoming, isLoading} = useMovies();
   const {top} = useSafeAreaInsets();
 
   if (isLoading) return <Loading />;
@@ -16,10 +16,12 @@ const HomeScreen = () => {
     <ScrollView>
       <View style={{marginTop: top + 20}}>
         {/* Películas EN CINES */}
-        <CarouselMain title={'En cines'} movies={moviesNowPlaying} />
+        <CarouselMain title={'En cines'} movies={nowPlaying} />
 
         {/* Películas POPULARES */}
-        <HorizontalSlider title={'Popular'} movies={popularMovies} />
+        <HorizontalSlider title={'Popular'} movies={popular} />
+        <HorizontalSlider title={'Mejor valoradas'} movies={topRated} />
+        <HorizontalSlider title={'Próximamente'} movies={upcoming} />
       </View>
     </ScrollView>
   );
