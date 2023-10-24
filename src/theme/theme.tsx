@@ -7,7 +7,9 @@ export const styles = StyleSheet.create({
     alignContent: 'center',
   },
   colors: {},
-
+  cardContainer: {
+    marginHorizontal:5,
+  },
   elevation: {
     elevation: 20,
     shadowColor: '#000',

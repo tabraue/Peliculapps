@@ -1,25 +1,32 @@
-import React from 'react'
-import { Image, View } from 'react-native'
-import { Movie } from '../interfaces/movieInterface'
-import { styles } from '../theme/theme';
+import React from 'react';
+import {Image, TouchableOpacity, View} from 'react-native';
+import {Movie} from '../interfaces/movieInterface';
+import {styles} from '../theme/theme';
+import { useNavigation } from '@react-navigation/native';
 
-interface Props{
-    movie: Movie;
-    height?: number;
-    width?: number;
+interface Props {
+  movie: Movie;
+  height?: number;
+  width?: number;
 }
 
-const MoviePoster = ({ movie, height = 420, width = 300 }: Props) => {
+const MoviePoster = ({movie, height = 420, width = 300}: Props) => {
+  const imageUri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
-    const imageUri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+  const navigation = useNavigation();
+
+  
 
   return (
-    <View style={[styles.elevation, {width, height, marginHorizontal:5}]}>
-        <View  style={styles.imgContainer}>
-            <Image source={{uri: imageUri}} style={styles.img}/>
-        </View>
-    </View>
-  )
-}
+    <TouchableOpacity
+      onPress={() => navigation.navigate('DetailScreen', movie)}
+      activeOpacity={0.8}
+      style={[styles.elevation, styles.cardContainer, {width, height}]}>
+      <View style={styles.imgContainer}>
+        <Image source={{uri: imageUri}} style={styles.img} />
+      </View>
+    </TouchableOpacity>
+  );
+};
 
-export default MoviePoster
+export default MoviePoster;
