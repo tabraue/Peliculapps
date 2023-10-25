@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
   },
-  colors: {},
   elevation: {
     elevation: 20,
     shadowColor: '#000',
@@ -36,6 +35,10 @@ export const styles = StyleSheet.create({
   titleMovieTxt:{
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  pMovieTxt: {
+    fontSize: 16,
   },
   movieTxtContainer:{
     marginHorizontal:20,
@@ -50,6 +53,32 @@ export const styles = StyleSheet.create({
   },
   imgDetails: {
     flex: 1,
+  },
+  iconStyle: {
+    width: 10,
+  },
+  actorCard:{
+    flexDirection: 'row',
+    padding:8,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    marginRight: 10
+  },
+  actorInfo:{
+    marginLeft: 10,
+  },
+  actorImg:{
+    width: 50,
+    height: 50,
+    borderRadius: 10,
+  },
+  actorTitle:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  actorParagraph: {
+
   },
 
 });
