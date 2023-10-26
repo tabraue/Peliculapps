@@ -7,12 +7,14 @@ import {useMovieDetails} from '../hooks/useMovieDetails';
 import Loading from '../components/Loading';
 import MovieDetails from '../components/MovieDetails';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { imageUri } from '../constants/constants';
 
 interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> {}
 
 const DetailScreen = ({navigation, route}: Props) => {
   const movie = route.params;
-  const imageUri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
+  const movieImageUri: string = imageUri+`${movie.poster_path}`
 
   const {cast, isLoading, movieFullDetails} = useMovieDetails(movie.id);
 
@@ -21,7 +23,7 @@ const DetailScreen = ({navigation, route}: Props) => {
   return (
     <ScrollView>
       <View style={[styles.imgDetailsContainer, styles.elevation]}>
-        <Image source={{uri: imageUri}} style={[styles.imgDetails]} />
+        <Image source={{uri: movieImageUri}} style={[styles.imgDetails]} />
       </View>
       <View style={styles.movieTxtContainer}>
         <Text style={styles.titleMovieTxt}>{movie.original_title}</Text>

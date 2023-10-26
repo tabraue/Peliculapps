@@ -3,6 +3,7 @@ import {Image, TouchableOpacity, View} from 'react-native';
 import {Movie} from '../interfaces/movieInterface';
 import {styles} from '../theme/theme';
 import { useNavigation } from '@react-navigation/native';
+import { imageUri } from '../constants/constants';
 
 interface Props {
   movie: Movie;
@@ -11,8 +12,8 @@ interface Props {
 }
 
 const MoviePoster = ({movie, height = 420, width = 300}: Props) => {
-
-  const imageUri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  
+  const movieImageUri: string = imageUri+`${movie.poster_path}`
 
   const navigation = useNavigation();  
 
@@ -22,7 +23,7 @@ const MoviePoster = ({movie, height = 420, width = 300}: Props) => {
       activeOpacity={0.8}
       style={[ styles.cardContainer, {width, height}]}>
       <View style={[styles.imgContainer, styles.elevation]}>
-        <Image source={{uri: imageUri}} style={styles.img} />
+        <Image source={{uri: movieImageUri}} style={styles.img} />
       </View>
     </TouchableOpacity>
   );

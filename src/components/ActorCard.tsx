@@ -2,19 +2,21 @@ import React from 'react';
 import {Cast} from '../interfaces/castInterface';
 import {Text, View, Image} from 'react-native';
 import {styles} from '../theme/theme';
+import { imageUri } from '../constants/constants';
 
 interface Props {
   actor: Cast;
 }
 
 const ActorCard = ({actor}: Props) => {
-  const imageUri = `https://image.tmdb.org/t/p/w500${actor.profile_path}`;
+
+  const actorImageUri: string = imageUri+`${actor.profile_path}`
 
   return (
     <View style={[styles.elevation, styles.actorCard]}>
       {actor.profile_path && (
         <Image
-          source={{uri: imageUri}}
+          source={{uri: actorImageUri}}
           style={[styles.actorImg, styles.elevation]}
           key={actor.id}
         />

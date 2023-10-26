@@ -9,10 +9,10 @@ export const styles = StyleSheet.create({
   },
   elevation: {
     elevation: 20,
-    shadowColor: '#000',
+/*     shadowColor: '#000',
     shadowOffset: {width: 6, height: 6},
     shadowOpacity: 0.6,
-    shadowRadius: 4,
+    shadowRadius: 4, */
   },
   cardContainer: {
     marginHorizontal: 2,
