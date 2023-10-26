@@ -25,3 +25,5 @@ export const StackNavigator = () => {
     </Stack.Navigator>
   );
 };
+
+//options={{cardStyle: { backgroundColor: 'black'}}}

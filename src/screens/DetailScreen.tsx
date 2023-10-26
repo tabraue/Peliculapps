@@ -1,12 +1,12 @@
 import React from 'react';
 import {StackScreenProps} from '@react-navigation/stack';
-import {ActivityIndicator, Image, Text, View} from 'react-native';
+import {ActivityIndicator, Image, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import {RootStackParams} from '../navigation/StackNavigator';
 import {styles} from '../theme/theme';
-import {ScrollView} from 'react-native-gesture-handler';
 import {useMovieDetails} from '../hooks/useMovieDetails';
 import Loading from '../components/Loading';
 import MovieDetails from '../components/MovieDetails';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> {}
 
@@ -25,13 +25,26 @@ const DetailScreen = ({navigation, route}: Props) => {
       </View>
       <View style={styles.movieTxtContainer}>
         <Text style={styles.titleMovieTxt}>{movie.original_title}</Text>
+        <Text style={styles.subtitleMovieTxt}>{movie.title}</Text>
       </View>
 
       {isLoading ? (
         <ActivityIndicator size={30} color={'grey'} style={{marginTop: 20}} />
-      ) : (
-        <MovieDetails movieFullDetails={movieFullDetails!} cast={cast} />
-      )}
+        ) : (
+          <MovieDetails movieFullDetails={movieFullDetails!} cast={cast} />
+          )}
+
+          <TouchableOpacity 
+            style={styles.backButton} 
+            onPress={() => navigation.pop()}
+          >
+            <Icon
+              name="arrow-back-outline"
+              size={50}
+              color="#000"
+              style={{opacity: 0.4}}              
+            />
+          </TouchableOpacity>
     </ScrollView>
   );
 };

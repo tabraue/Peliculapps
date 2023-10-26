@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { View, Text, FlatList } from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import {MovieFullDetails} from '../interfaces/movieInterface';
 import {Cast} from '../interfaces/castInterface';
 import {styles} from '../theme/theme';
@@ -15,12 +15,13 @@ const MovieDetails = ({movieFullDetails, cast}: Props) => {
   return (
     <>
       {/* Detalles */}
-      <View style={{marginHorizontal: 20}}>
+      <View>
         <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
+            marginHorizontal: 20,
           }}>
           <Icon
             name="star"
@@ -41,19 +42,25 @@ const MovieDetails = ({movieFullDetails, cast}: Props) => {
         </View>
 
         {/* Sinopsis */}
-        <Text style={styles.titleMovieTxt}>Synopsis</Text>
-        <Text style={[styles.pMovieTxt, {textAlign: 'justify'}]}>
-          {movieFullDetails.overview}
-        </Text>
+        <View style={{marginHorizontal: 20}}>
+          <Text style={styles.titleMovieTxt}>Synopsis</Text>
+          <Text style={[styles.pMovieTxt, {textAlign: 'justify'}]}>
+            {movieFullDetails.overview}
+          </Text>
+        </View>
 
         {/* Actrices y actores */}
+        <View>
           <Text style={styles.titleMovieTxt}>Actors</Text>
-          <FlatList 
-            data={cast} 
+          <FlatList
+            data={cast}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            renderItem={({item, index, separators}: any ) => <ActorCard actor={item} key={index}/>}
-            />
+            renderItem={({item, index, separators}: any) => (
+              <ActorCard actor={item} key={index} />
+            )}
+          />
+        </View>
       </View>
     </>
   );

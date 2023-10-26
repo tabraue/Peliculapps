@@ -35,7 +35,15 @@ export const styles = StyleSheet.create({
   titleMovieTxt:{
     fontSize: 20,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginVertical: 10,
+  },
+  subtitleMovieTxt:{
+    fontSize: 16,
+    opacity: 0.7,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 10,
   },
   pMovieTxt: {
     fontSize: 16,
@@ -46,9 +54,9 @@ export const styles = StyleSheet.create({
   },
   imgDetailsContainer: {
     width: '100%',
-    height: height * 0.7,
-    borderBottomEndRadius: 150,
-    borderBottomStartRadius: 0,
+    height: height * 0.5,
+    borderBottomEndRadius: 50,
+    borderBottomStartRadius: 50,
     overflow: 'hidden',
   },
   imgDetails: {
@@ -62,10 +70,11 @@ export const styles = StyleSheet.create({
     padding:8,
     backgroundColor: 'white',
     borderRadius: 10,
-    marginRight: 10
+    marginRight: 10,
+    marginBottom: 50
   },
   actorInfo:{
-    marginLeft: 10,
+   marginHorizontal: 10,
   },
   actorImg:{
     width: 50,
@@ -76,9 +85,17 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginHorizontal: 3,
   },
   actorParagraph: {
 
+  },
+  backButton:{
+    position: 'absolute',
+    zIndex: 999,
+    elevation: 9,
+    top: 10,
+    left: 5
   },
 
 });
