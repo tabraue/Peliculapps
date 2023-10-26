@@ -54,7 +54,7 @@ export const styles = StyleSheet.create({
   },
   imgDetailsContainer: {
     width: '100%',
-    height: height * 0.5,
+    height: height * 0.75,
     borderBottomEndRadius: 50,
     borderBottomStartRadius: 50,
     overflow: 'hidden',
