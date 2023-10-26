@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {Movie} from '../interfaces/movieInterface';
 import {styles} from '../theme/theme';
 import { useNavigation } from '@react-navigation/native';
@@ -11,7 +11,7 @@ interface Props {
   width?: number;
 }
 
-const MoviePoster = ({movie, height = 420, width = 300}: Props) => {
+const MoviePoster = ({movie, height = 420, width = 300, color}: Props) => {
   
   const movieImageUri: string = imageUri+`${movie.poster_path}`
 

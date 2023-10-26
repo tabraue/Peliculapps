@@ -9,6 +9,7 @@ interface Props {
 }
 
 const GradientBackground = ({children}: Props) => {
+  
   const {currColors, prevColors, setPreviousColors} =
     useContext(GradientContext);
 
@@ -31,7 +32,7 @@ const GradientBackground = ({children}: Props) => {
         ]}
         style={{...StyleSheet.absoluteFillObject}}
         start={{x: 0.1, y: 0.1}}
-        end={{x: 0.4, y: 0.8}}
+        end={{x: 0.3, y: 0.8}}
       />
       <Animated.View style={{...StyleSheet.absoluteFillObject, opacity}}>
         <LinearGradient
@@ -42,7 +43,7 @@ const GradientBackground = ({children}: Props) => {
           ]}
           style={{...StyleSheet.absoluteFillObject}}
           start={{x: 0.1, y: 0.1}}
-          end={{x: 0.4, y: 0.8}}
+          end={{x: 0.3, y: 0.8}}
         />
       </Animated.View>
       {children}

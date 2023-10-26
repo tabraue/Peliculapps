@@ -1,6 +1,6 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import Carousel from 'react-native-snap-carousel';
-import {Text, View} from 'react-native';
+import { Text, View } from 'react-native';
 import {Movie} from '../interfaces/movieInterface';
 import {imageUri, width} from '../constants/constants';
 import {styles} from '../theme/theme';
@@ -8,28 +8,32 @@ import MoviePoster from './MoviePoster';
 import {getImageColors} from '../functions/getColors';
 import {GradientContext} from '../context/GradientContext';
 
+
 interface Props {
   title?: string;
   movies: Movie[];
 }
 
 const CarouselMain = ({title, movies}: Props) => {
-  const {setCurrentColors, setPreviousColors} = useContext(GradientContext);
+  const {setCurrentColors} = useContext(GradientContext);
+
 
   const getPosterColors = async (idx: number) => {
     const movie = movies[idx];
     const movieImageUri: string = imageUri + `${movie.poster_path}`;
 
-    const [dominant = 'powderblue', average = 'powderblue', lightVibrant = 'powderblue'] = await getImageColors(movieImageUri);
+    const {
+      dominant = 'powderblue',
+      average = 'powderblue',
+      lightVibrant = 'powderblue',
+    } = await getImageColors(movieImageUri);
 
     setCurrentColors({dominant, average, lightVibrant});
   };
 
   useEffect(() => {
-    if (movies.length > 0) getPosterColors(0)
-  }, [movies])
-  
-
+    if (movies.length > 0) getPosterColors(0);
+  }, [movies]);
 
   return (
     <View>
@@ -39,7 +43,10 @@ const CarouselMain = ({title, movies}: Props) => {
           <Carousel
             data={movies}
             renderItem={({item}: any) => (
-              <MoviePoster movie={item} key={item.id} />
+              <MoviePoster
+                movie={item}
+                key={item.id}
+              />
             )}
             onSnapToItem={slideIndex => getPosterColors(slideIndex)}
             layout={'stack'}

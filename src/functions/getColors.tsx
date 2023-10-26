@@ -13,6 +13,7 @@ export const getImageColors = async (uri: string) => {
     dominant = colors.dominant;
     average = colors.average;
     lightVibrant = colors.lightVibrant;
+
   }
-  return [dominant, average, lightVibrant];
+  return {dominant, average, lightVibrant};
 };
