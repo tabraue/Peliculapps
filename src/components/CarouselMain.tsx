@@ -7,6 +7,7 @@ import {styles} from '../theme/theme';
 import MoviePoster from './MoviePoster';
 import {getImageColors} from '../functions/getColors';
 import {GradientContext} from '../context/GradientContext';
+import { useColors } from '../hooks/useColors';
 
 
 interface Props {
@@ -15,7 +16,7 @@ interface Props {
 }
 
 const CarouselMain = ({title, movies}: Props) => {
-  const {setCurrentColors} = useContext(GradientContext);
+/*   const {setCurrentColors} = useContext(GradientContext);
 
 
   const getPosterColors = async (idx: number) => {
@@ -34,6 +35,9 @@ const CarouselMain = ({title, movies}: Props) => {
   useEffect(() => {
     if (movies.length > 0) getPosterColors(0);
   }, [movies]);
+ */
+
+  const {getPosterColors} = useColors(movies)
 
   return (
     <View>

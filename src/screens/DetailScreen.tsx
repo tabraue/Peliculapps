@@ -17,6 +17,7 @@ const DetailScreen = ({navigation, route}: Props) => {
   const movieImageUri: string = imageUri+`${movie.poster_path}`
 
   const {cast, isLoading, movieFullDetails} = useMovieDetails(movie.id);
+  
 
   if (isLoading) return <Loading />;
 

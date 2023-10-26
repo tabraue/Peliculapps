@@ -18,7 +18,7 @@ const HomeScreen = () => {
       <ScrollView>
         <View style={{marginTop: top + 20}}>
           {/* Películas EN CINES */}
-          <CarouselMain title={'En cines'} movies={nowPlaying} />
+          <CarouselMain title={'En cines'} movies={nowPlaying}/>
 
           {/* Películas POPULARES */}
           <HorizontalSlider title={'Popular'} movies={popular} />

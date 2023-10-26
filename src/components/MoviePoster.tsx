@@ -11,7 +11,7 @@ interface Props {
   width?: number;
 }
 
-const MoviePoster = ({movie, height = 420, width = 300, color}: Props) => {
+const MoviePoster = ({movie, height = 420, width = 300}: Props) => {
   
   const movieImageUri: string = imageUri+`${movie.poster_path}`
 
